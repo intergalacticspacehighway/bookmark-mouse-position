@@ -22,7 +22,7 @@ https://user-images.githubusercontent.com/23293248/144154421-ac103144-acd5-43aa-
 ### Why?
 
 - This makes it easier to traverse mouse position in multiple display monitors.
-- I found it useful.
+- [I found it useful](https://twitter.com/nishanbende/status/1465791430312398862)
 
 ### Folder/file structure
 

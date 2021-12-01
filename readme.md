@@ -33,9 +33,9 @@ npm i
 ### To run locally
 
 ```
-// To bundle react app and start parcel server
+// 1. Bundle react app and start parcel server
 npm run parcel
-// To start electron app
+// 2. Start electron app
 npm start
 ```
 

@@ -116,8 +116,8 @@ app.whenReady().then(() => {
   // Attach listeners for 9 number keys
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].forEach((n) => {
     globalShortcut.register(NUMBER_KEY + n, () => {
-      if (typeof storeAPI.get(n) !== "undefined") {
-        const nextIndex = n === 0 ? 9 : n - 1;
+      const nextIndex = n === 0 ? 9 : n - 1;
+      if (typeof storeAPI.get(nextIndex) !== "undefined") {
         storeAPI.setCurrentIndex(nextIndex);
         mouse.setPosition(
           new Point(
@@ -133,7 +133,9 @@ app.whenReady().then(() => {
     if (storeAPI.getCurrentIndex() === null) {
       storeAPI.setCurrentIndex(0);
     } else {
-      storeAPI.setCurrentIndex((storeAPI.getCurrentIndex() + 1) % 10);
+      storeAPI.setCurrentIndex(
+        (storeAPI.getCurrentIndex() + 1) % storeAPI.length()
+      );
     }
 
     mouse.setPosition(

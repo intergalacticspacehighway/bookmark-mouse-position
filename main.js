@@ -10,7 +10,7 @@ const { mouse, Point } = require("@nut-tree/nut-js");
 const isDev = require("electron-is-dev");
 const fs = require("fs");
 
-const STORE_FILE = path.join(__dirname, "saved-data-1.json");
+const STORE_FILE = path.join(__dirname, "saved-data.json");
 
 // Handles persisting, sending updated store to renderer (react-app)
 const getStore = (win) => {

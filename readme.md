@@ -4,8 +4,9 @@ Save mouse positions using a shortcut key and quickly traverse to them using ano
 
 <br />
 
-<video src="https://raw.github.com/intergalacticspacehighway/to-host-some-assets/master/bookmark-mouse-positions.mp4" width="600px" style="max-width: 100%">
-</video>
+
+https://user-images.githubusercontent.com/23293248/144154421-ac103144-acd5-43aa-9372-42e123a911bd.mp4
+
 
 <br />
 

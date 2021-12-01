@@ -1,29 +1,27 @@
-## Bookmark mouse locations
+## Bookmark mouse position
 
 Save mouse positions using a shortcut key and quickly traverse to them using another shortcut key.
 
 <br />
 
-
 https://user-images.githubusercontent.com/23293248/144154421-ac103144-acd5-43aa-9372-42e123a911bd.mp4
-
 
 <br />
 
 ### Current shortcut keys
 
-- To save mouse location -
+- To save mouse position -
 
   - macOS: `cmd+shift+r`
   - windows/linux: `ctrl+shift+r`
 
-- To traverse mouse location -
+- To traverse mouse position -
   - macOS: `cmd+shift+1`, `cmd+shift+2`, `cmd+shift+3`
   - windows/linux: `ctrl+shift+1`, `ctrl+shift+2`, `ctrl+shift+3`
 
 ### Why?
 
-- This makes it easier to traverse mouse location in multiple display monitors.
+- This makes it easier to traverse mouse position in multiple display monitors.
 - I found it useful.
 
 ### Folder/file structure

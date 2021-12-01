@@ -60,5 +60,6 @@ Might require Node 16+
 
 ### Todo
 
-- Make a non electron version to reduce the size.
+- Better shortcut keys!
+- Make a non electron version to reduce the app size.
   If someone has any ideas, please let me know!

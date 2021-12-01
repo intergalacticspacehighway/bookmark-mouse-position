@@ -21,6 +21,10 @@ export const App = () => {
         window.api.receive('fromMain', (e) => {
             dispatch(e)
         })
+
+        window.api.send('toMain', JSON.stringify({
+            type: "mounted",
+        }))
     },[])
 
     const deleteAtIndex = (index) => {
@@ -32,7 +36,7 @@ export const App = () => {
         }))
     }
 
-    console.log('ss ', state)
+    console.log('state ', state)
     return <div>
         {state.positions.map((p, index)=>{
             return <div key={index}>

@@ -18,6 +18,12 @@ Save mouse positions using a shortcut key and quickly traverse to them using ano
 - This makes it easier to traverse mouse location in multiple display monitors.
 - I found it useful.
 
+### Folder/file structure
+
+- main.js contains the electron app entry point.
+- src/index.js contains browser renderer entry point. This is a react app.
+- No webpack or complicated bundler setup, we're using parcel 🎉
+
 ### Install dependencies
 
 ```

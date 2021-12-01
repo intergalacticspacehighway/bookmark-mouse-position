@@ -12,9 +12,19 @@ const fs = require("fs");
 
 const STORE_FILE = path.join(__dirname, "saved-data.json");
 
+// cmd+alt+'
+const BOOKMARK_KEY = "CommandOrControl+Alt+'";
+
+// cmd+alt+1
+const NUMBER_KEY = "CommandOrControl+Alt+";
+
+// cmd+alt+e
+const TOGGLE_KEY = "CommandOrControl+Alt+E";
+
 // Handles persisting, sending updated store to renderer (react-app)
 const getStore = (win) => {
   let data;
+  let currentIndex = null;
   try {
     data = JSON.parse(fs.readFileSync(STORE_FILE));
   } catch (e) {
@@ -51,6 +61,12 @@ const getStore = (win) => {
       return data[index];
     },
     length: () => data.length,
+    setCurrentIndex: (nextIndex) => {
+      currentIndex = nextIndex;
+    },
+    getCurrentIndex: () => {
+      return currentIndex;
+    },
   };
 };
 
@@ -83,9 +99,9 @@ app.whenReady().then(() => {
   const win = createWindow();
   const storeAPI = getStore(win);
 
-  globalShortcut.register("CommandOrControl+Shift+R", () => {
+  globalShortcut.register(BOOKMARK_KEY, () => {
     const cursorPosition = screen.getCursorScreenPoint();
-    if (storeAPI.length() < 4) {
+    if (storeAPI.length() < 10) {
       storeAPI.push(cursorPosition);
     }
   });
@@ -97,19 +113,35 @@ app.whenReady().then(() => {
     }
   });
 
-  globalShortcut.register("CommandOrControl+Shift+1", () => {
-    if (storeAPI.length() >= 1)
-      mouse.setPosition(new Point(storeAPI.get(0).x, storeAPI.get(0).y));
+  // Attach listeners for 9 number keys
+  [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].forEach((n) => {
+    globalShortcut.register(NUMBER_KEY + n, () => {
+      if (typeof storeAPI.get(n) !== "undefined") {
+        const nextIndex = n === 0 ? 9 : n - 1;
+        storeAPI.setCurrentIndex(nextIndex);
+        mouse.setPosition(
+          new Point(
+            storeAPI.get(storeAPI.getCurrentIndex()).x,
+            storeAPI.get(storeAPI.getCurrentIndex()).y
+          )
+        );
+      }
+    });
   });
 
-  globalShortcut.register("CommandOrControl+Shift+2", () => {
-    if (storeAPI.length() >= 2)
-      mouse.setPosition(new Point(storeAPI.get(1).x, storeAPI.get(1).y));
-  });
+  globalShortcut.register(TOGGLE_KEY, () => {
+    if (storeAPI.getCurrentIndex() === null) {
+      storeAPI.setCurrentIndex(0);
+    } else {
+      storeAPI.setCurrentIndex((storeAPI.getCurrentIndex() + 1) % 10);
+    }
 
-  globalShortcut.register("CommandOrControl+Shift+3", () => {
-    if (storeAPI.length() >= 3)
-      mouse.setPosition(new Point(storeAPI.get(2).x, storeAPI.get(2).y));
+    mouse.setPosition(
+      new Point(
+        storeAPI.get(storeAPI.getCurrentIndex()).x,
+        storeAPI.get(storeAPI.getCurrentIndex()).y
+      )
+    );
   });
 
   app.on("activate", () => {
@@ -119,4 +151,7 @@ app.whenReady().then(() => {
 
 app.on("window-all-closed", () => {
   app.quit();
+});
+app.on("will-quit", () => {
+  globalShortcut.unregisterAll();
 });

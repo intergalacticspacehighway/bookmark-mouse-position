@@ -2,6 +2,13 @@
 
 Save mouse positions using a shortcut key and quickly traverse to them using another shortcut key.
 
+<br />
+
+<video src="https://raw.github.com/intergalacticspacehighway/to-host-some-assets/master/bookmark-mouse-positions.mp4" width="600px" style="max-width: 100%">
+</video>
+
+<br />
+
 ### Current shortcut keys
 
 - To save mouse location -

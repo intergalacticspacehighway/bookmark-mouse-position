@@ -19,10 +19,20 @@ https://user-images.githubusercontent.com/23293248/144154421-ac103144-acd5-43aa-
   - macOS: `cmd+shift+1`, `cmd+shift+2`, `cmd+shift+3`
   - windows/linux: `ctrl+shift+1`, `ctrl+shift+2`, `ctrl+shift+3`
 
+### Downloads
+
+- macOS - <a href="https://github.com/intergalacticspacehighway/bookmark-mouse-position/releases/download/v1/Bookmark.mouse.position.dmg" download>Download latest dmg</a>
+
+- Windows - N/A (I don't have a windows system. Need help!)
+
+- Linux - N/A (I don't have a linux system. Need help!)
+
 ### Why?
 
 - This makes it easier to traverse mouse position in multiple display monitors.
 - [I found it useful](https://twitter.com/nishanbende/status/1465791430312398862)
+
+## Develop
 
 ### Folder/file structure
 

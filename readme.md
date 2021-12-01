@@ -57,3 +57,8 @@ https://www.electronjs.org/docs/latest/tutorial/quick-start#package-and-distribu
 **NOTE**
 
 Might require Node 16+
+
+### Todo
+
+- Make a non electron version to reduce the size.
+  If someone has any ideas, please let me know!

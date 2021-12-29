@@ -66,6 +66,11 @@ npm run make
 
 - Build will be generated in out/
 
+## Enable permissions to the app
+
+- You'll need to enable `Accessibility` and `Input Monitoring` permissions for the app as shown below.
+  ![macos security and permissions](/permissions.png)
+
 ### Read more on building electron app
 
 https://www.electronjs.org/docs/latest/tutorial/quick-start#package-and-distribute-your-application
